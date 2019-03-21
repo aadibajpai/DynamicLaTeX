@@ -1,5 +1,5 @@
 import datetime
-from flask import Flask, url_for
+from flask import Flask
 from updater import update_resume
 
 app = Flask(__name__, static_folder='')
