@@ -23,10 +23,10 @@ def update_resume():
   \usepackage[empty]{fullpage}
   \usepackage{titlesec}
   \usepackage{marvosym}
+  \usepackage{bookmark}
   \usepackage[usenames,dvipsnames]{color}
   \usepackage{verbatim}
   \usepackage{enumitem}
-  \usepackage[pdftex]{hyperref}
   \usepackage{fancyhdr}
 
 
@@ -288,7 +288,7 @@ def update_resume():
       os.unlink('aadi_resume.pdf')
       raise ValueError('Error {} executing command: {}'.format(retcode, ' '.join(cmd))) 
 
-  for ext in ['tex', 'aux', 'out', 'log']:
+  for ext in ['tex', 'log']:
   	os.unlink(f'aadi_resume.{ext}')
 
 
