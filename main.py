@@ -10,7 +10,7 @@ update_date = 0
 def hello():
 	return redirect('https://aadibajpai.me')
 
-@app.route('/aadi_resume')
+@app.route('/aadi_resume.pdf')
 def resume():
 	global update_date
 	print(f"resume last updated at {update_date}")
