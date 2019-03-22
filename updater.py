@@ -288,9 +288,9 @@ def update_resume():
       os.unlink('aadi_resume.pdf')
       raise ValueError('Error {} executing command: {}'.format(retcode, ' '.join(cmd))) 
 
-  for ext in ['tex', 'log']:
-  	os.unlink(f'aadi_resume.{ext}')
+  # for ext in ['tex', 'log']:
+  # 	os.unlink(f'aadi_resume.{ext}')
 
 
 if __name__ == '__main__':
-  updater()
+  update_resume()
