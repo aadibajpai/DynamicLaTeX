@@ -14,7 +14,7 @@ I've deployed mine to a heroku instance. Compilation takes place online.
 
 The application updates the resume when the date since last updation has changed to avoid redundant updation.
 
-## :question: Why did you feel the need for it, Aadi?
+## :interrobang: Why did you feel the need for this, Aadi?
 
 I use it to get the latest downloads count for SwagLyrics and write that so the resume is always up to date. Previously, I had to update the download count manually. Now, it's accurate to the day you download my resume.
 
