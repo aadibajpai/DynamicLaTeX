@@ -198,7 +198,7 @@ def update_resume():
         \resumeItemListStart
           \item {The Open Source Initiative (OSI) is a non-profit corporation with global scope formed to educate about and advocate for the benefits of open source and to build bridges among different constituencies in the open source community.}
       \vspace{-1mm}
-          \item {We're the stewards of the Open Source Definition (OSD) and the community-recognized body for reviewing and approving licenses as OSD-conformant.}
+          \item {We are the stewards of the Open Source Definition (OSD) and the community-recognized body for reviewing and approving licenses as OSD-conformant.}
       \vspace{-1mm}
           \item {Major organizations such as \textbf{Mozilla, the Wikimedia Foundation and Linux} are affiliated to the OSI.}
       \vspace{-1.5mm}
