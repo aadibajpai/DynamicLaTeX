@@ -6,6 +6,10 @@ app = Flask(__name__, static_folder='')
 
 update_date = 0
 
+@app.route('/')
+def hello():
+	return 'hello'
+
 @app.route('/aadi_resume')
 def resume():
 	global update_date
