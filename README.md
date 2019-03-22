@@ -18,6 +18,6 @@ The application updates the resume when the date since last updation has changed
 
 I use it to get the latest downloads count for SwagLyrics and write that so the resume is always up to date. Previously, I had to update the download count manually. Now, it's accurate to the day you download my resume.
 
-Try it in action at https://aadibajpai.me :wink:
+Try it in action at https://aadibajpai.me
 
 It is extensible as you can add as many variables as you want in your resume eg. GitHub contributions count and so on.
