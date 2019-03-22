@@ -147,7 +147,7 @@ def update_resume():
       \vspace{-3mm}
       \item {Successfully completed the \textbf{Microsoft Hacktoberfest Challenge}}
       \hfill\textit{\color{lightGray}2018}
-      \vspace{-1.5mm}
+      \vspace{-3mm}
       \item {Awarded the \textbf{General Proficiency} Award by DPS Kalyanpur for academic excellence.}
       \hfill\textit{\color{lightGray}2015}
       \vspace{-3mm}
