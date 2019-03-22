@@ -1,5 +1,5 @@
 import datetime
-from flask import Flask
+from flask import Flask, redirect
 from updater import update_resume
 
 app = Flask(__name__, static_folder='')
@@ -8,7 +8,7 @@ update_date = 0
 
 @app.route('/')
 def hello():
-	return 'hello'
+	return redirect('https://aadibajpai.me')
 
 @app.route('/aadi_resume')
 def resume():

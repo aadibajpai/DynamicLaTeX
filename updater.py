@@ -5,8 +5,8 @@ You'll probably need to modify the variables for your own use
 """
 
 import requests
-import subprocess
 import os
+from urllib.parse import quote_plus
 from bs4 import BeautifulSoup
 
 
@@ -276,20 +276,9 @@ def update_resume():
   ''' % {"dl":dl}
 
   # print(tex)
-  with open('aadi_resume.tex', 'w') as f:
-  	f.write(tex)
-
-  cmd = ['pdflatex', '-interaction', 'nonstopmode', 'aadi_resume.tex']
-  proc = subprocess.Popen(cmd)
-  proc.communicate()
-
-  retcode = proc.returncode
-  if not retcode == 0:
-      os.unlink('aadi_resume.pdf')
-      raise ValueError('Error {} executing command: {}'.format(retcode, ' '.join(cmd))) 
-
-  # for ext in ['tex', 'log']:
-  # 	os.unlink(f'aadi_resume.{ext}')
+  ltx = requests.get(f'https://latexonline.cc/compile?text={quote_plus(tex)}')
+  with open('aadi_resume.pdf', 'wb') as f:
+  	f.write(ltx.content) 
 
 
 if __name__ == '__main__':
