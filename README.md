@@ -1,6 +1,6 @@
 # DynamicLaTeXResume :crystal_ball:
 
-Updates LaTeX resume with the latest numbers on click if the data has changed.
+Your LaTeX resume always has the latest numbers when clicked.
 
 ## 📜 Usage
 
@@ -14,7 +14,7 @@ I've deployed mine to a heroku instance. Compilation takes place online.
 
 The application updates the resume when the date since last updation has changed to avoid redundant updation.
 
-## Why?
+## Why did you feel the need for it, Aadi:interrobang:
 
 I use it to get the latest downloads count for SwagLyrics and write that so the resume is always up to date. Previously, I had to update the download count manually. Now, it's accurate to the day you download my resume.
 
