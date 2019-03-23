@@ -275,7 +275,7 @@ def update_resume():
   ''' % {"dl":dl}
 
   # print(tex)
-  ltx = requests.get(f'https://latexonline.cc/compile?text={quote_plus(tex)}')
+  ltx = requests.get(f'https://latexonline.cc/compile?text={quote_plus(tex)}force=true')
   with open('aadi_resume.pdf', 'wb') as f:
   	f.write(ltx.content) 
 
