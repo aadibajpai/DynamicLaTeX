@@ -9,9 +9,11 @@ from urllib.parse import quote_plus
 
 
 def update_resume():
-    r = requests.get('https://pepy.tech/api/projects/swaglyrics')
+    r1 = requests.get('https://api.pepy.tech/api/projects/swaglyrics')
 
-    dl = r.json()['total_downloads']
+    r2 = requests.get('https://api.pepy.tech/api/projects/SwSpotify')
+
+    dl = r1.json()['total_downloads'] + r2.json()['total_downloads']
 
     tex = r'''
     \documentclass[letterpaper,11pt]{article}
@@ -179,7 +181,9 @@ def update_resume():
           {\color{darkGray}Application development and open-source contributions}
           {\color{lightGray}February 2017 - Ongoing}
           \resumeItemListStart
-            \item {Notably, developed Python Package \textbf{``SwagLyrics For Spotify"} which has \textbf{%(dl)s users} as of \today.}
+            \item {Notably, founded the SwagLyrics Project and authored libraries under the project that have \textbf{%(dl)s 
+            users} as of 
+            \today.}
         \vspace{-1mm}
             \item {Made \textbf{1,000 GitHub contributions} in 2018, also contributed to open-source repositories such as Reddit, Microsoft and Node Package Manager.}
         \vspace{-1mm}
