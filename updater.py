@@ -4,10 +4,12 @@ Don't use my résumé lol, but feel free to use the LaTeX template
 You'll probably need to modify the variables for your own use
 """
 
-import requests
+import re
 from urllib.parse import quote_plus
 
-libs = ['swaglyrics', 'SwSpotify']
+import requests
+
+r = re.compile(r'\\py{([\w]+)}')
 
 
 def dl_count(libraries):
@@ -20,17 +22,15 @@ def dl_count(libraries):
     py_url = 'https://api.pepy.tech/api/projects/{lib}'
     cnt = 0
     for lib in libraries:
-        r = requests.get(py_url.format(lib=lib))
-        cnt += r.json()['total_downloads']
+        req = requests.get(py_url.format(lib=lib))
+        cnt += req.json()['total_downloads']
     return cnt
 
 
-def update_resume(python_libs=libs):
-
-    dl = dl_count(python_libs)  # get download count of libraries
+def update_resume(template_values):
 
     with open('resume.tex', 'r') as f:
-        tex = f.read() % {"dl": format(dl, ',d')}
+        tex = r.sub(lambda x: str(format(template_values[x.group(1)], ',d')), f.read())
 
     # print(tex)
     ltx = requests.get(f'https://latexonline.cc/compile?text={quote_plus(tex)}&force=true')
@@ -39,4 +39,4 @@ def update_resume(python_libs=libs):
 
 
 if __name__ == '__main__':
-    update_resume()
+    update_resume({'dlt': dl_count(['swaglyrics', 'SwSpotify'])})

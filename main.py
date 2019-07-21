@@ -1,10 +1,15 @@
-import datetime
+from datetime import datetime as dt
+
 from flask import Flask, redirect
-from updater import update_resume
+
+from updater import update_resume, dl_count
 
 app = Flask(__name__, static_folder='')
 
 update_date = 0
+
+# config info
+template_values = {'dlt': dl_count(['swaglyrics', 'SwSpotify'])}
 
 
 @app.route('/')
@@ -16,10 +21,11 @@ def hello():
 def resume():
     global update_date
     print(f"resume last updated at {update_date}")
-    date_now = datetime.date.today()
-    if date_now != update_date:
-        update_resume()
-        update_date = date_now
+    date_now = dt.today()
+    # pepy updates at 5pm UTC https://github.com/psincraian/pepy#faq
+    if date_now.day > update_date and date_now.hour > 16 or update_date == 0:
+        update_resume(template_values)
+        update_date = date_now.day
         print(f"resume updated now at {update_date}")
     return app.send_static_file('aadi_resume.pdf')
 
