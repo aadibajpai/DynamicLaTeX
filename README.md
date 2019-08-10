@@ -1,23 +1,37 @@
-# DynamicLaTeXResume :crystal_ball:
+# DynamicLaTeX :crystal_ball:
 
-Your LaTeX resume always has the latest numbers when clicked.
+Your LaTeX document always has the latest numbers when clicked. Originally created for updating LaTeX resumes.
+
+Highly extensible.
 
 ## 📜 Usage
 
-Add your LaTeX code and whatever variables you want to update in `updater.py`.
+- Define this new command in your LaTeX document:
+```LaTeX
+\newcommand{\py}[1]{\textit{\%#1\%}}
+```
 
-Then serve your pdf with `main.py`. 
+- Wherever you want to format the dynamic variable, use the command as:
+```LaTeX
+\py{<variable_name>}
+```
+- Add your LaTeX code in `resume.tex`.
 
-Use the old `%s` python string formatting as LaTeX code has `{}` that you'll need to individuallly escape otherwise.
+- In `main.py`, add the same variable names and updation function to `template_values`. That's it!
 
-I've deployed mine to a heroku instance. Compilation takes place online.
+Serve your pdf by running `main.py`. I've used my name in the endpoints so do change that with your own :)
 
-The application updates the resume when the date since last updation has changed to avoid redundant updation.
+There are a few updation helper functions provided in `updater.py` already as well.
 
-## :interrobang: Why did you feel the need for this, Aadi?
+## :grey_question: Why?
 
-I use it to get the latest downloads count for SwagLyrics and write that so the resume is always up to date. Previously, I had to update the download count manually. Now, it's accurate to the day you download my resume.
+I use it to get the latest downloads count for SwagLyrics and SwSpotify then write that so the resume is always up to 
+date. 
+Previously, I had to update the download count manually. Now, it's accurate to the day you download my resume.
 
 Try it in action at https://aadibajpai.me
 
+I've deployed mine to a heroku instance. Compilation takes place online.
+
 It is extensible as you can add as many variables as you want in your resume eg. GitHub contributions count and so on.
+You can also edit when you want it to update as well as automate that with a cron job.

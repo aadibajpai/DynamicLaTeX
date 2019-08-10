@@ -9,7 +9,8 @@ app = Flask(__name__, static_folder='')
 update_date = 0
 
 # config info
-template_values = {'dlt': dl_count(['swaglyrics', 'SwSpotify'])}
+template_values = {'dlt': dl_count(['swaglyrics', 'SwSpotify'])
+                   }
 
 
 @app.route('/')
